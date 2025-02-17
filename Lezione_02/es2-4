@@ -1,0 +1,10 @@
+# name of the person
+personsName = "stefano"
+
+# prints of name in lower, upper and titlecase
+
+print(personsName.lower())
+
+print(personsName.upper())
+
+print(personsName.title())
