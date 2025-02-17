@@ -1,0 +1,6 @@
+# citazione famosa
+famousQuote = "'M'illumino d'immenso'"
+
+# print of quote and its author
+
+print("Giuseppe Ungaretti once said, " + famousQuote)
