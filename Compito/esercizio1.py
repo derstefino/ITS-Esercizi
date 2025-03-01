@@ -3,12 +3,13 @@ terminando l'inserimento quando viene digitata la parola "fine" (che non deve es
 Per ogni parola inserita, 
 il programma deve verificare se il primo e l'ultimo carattere sono uguali e visualizzare un messaggio corrispondente.'''
 
-parola:str = str(input())
+parola:str = (input("scrivi una parola (fine per terminare): "))
 
 while parola != "fine":
    
     if parola[0] == parola[-1]:
         print("il primo e l'ultimo carattere sono uguali")
-    parola:str = str(input())
+    
+    parola:str = str(input("scrivi una parola (fine per terminare): "))
     
 exit
