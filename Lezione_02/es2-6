@@ -1,7 +1,0 @@
-# persona famosa
-famous_person = "Giuseppe Ungaretti"
-
-# message
-message = famous_person + " once said, 'M'illumino d'immenso'"
-
-print(message)
