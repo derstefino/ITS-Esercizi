@@ -1,0 +1,16 @@
+# read posizione
+n:int = input()
+
+# write posizione
+
+if n == 1:
+    print(n + "st!")
+
+elif n == 2:
+    print(n + "nd!")
+    
+elif n == 3:
+    print(n + "rd!")
+
+else:
+    print(n + "th!")
