@@ -3,10 +3,12 @@ The function should print a message, such as "One of my favorite books is Alice 
 Call the function, making sure to include a book title as an argument in the function call.'''
 
 def favorite_book(title:str):
-    print(f"One of my favorie books is {title}")
+    
+    return (f"One of my favorie books is {title}")
 
 
+message = favorite_book("Alice in Wonderland")
 
-favorite_book("la bibbia")
+print(message)
 
 # on github

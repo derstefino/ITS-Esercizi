@@ -2,16 +2,15 @@
 The function should return a string formatted like this: "Santiago, Chile".
 Call your function with at least three city-country pairs, and print the values that are returned.'''
 
-def city_country(city:str, country:str):
+def city_country(city:str, country:str)->str:
     city= city + ","
-    print(city, country)
+    return city
 
 
+print((city_country("Aranciopoli", "Kanto")))
 
-city_country("Aranciopoli", "Kanto")
+print(city_country(("Whiterun", "Skyrim")))
 
-city_country("Whiterun", "Skyrim")
-
-city_country(country="Romania", city="Bucarest")
+print(city_country(country="Romania", city="Bucarest"))
 
 
