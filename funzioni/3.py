@@ -8,3 +8,5 @@ def print_numbers(a:list[float]):
         print(num)
 
 print_numbers([2, 2.22, 3, 4])
+
+# on github
