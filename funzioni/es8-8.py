@@ -17,7 +17,7 @@ def make_album(artist_name:str, album_title:str, n_songs:int=None) -> dict:
 
 
 
-music_list:list = []
+
 
 
 dream = make_album("Dream Theater", "Images and words", 8)
@@ -27,23 +27,35 @@ dream = make_album("Dream Theater", "Images and words", 8)
 
 while True:
     
-    enter_artist:str = str(input("Inserisci nome artista (esc per uscire): "))
+    enter_artist:str = str(input("Inserisci nome artista ('esc' per uscire): "))
     
     
     if enter_artist=="esc":
         break
 
-    enter_album:str = str(input("Inserisci titolo album (esc per uscire): "))
+    enter_album:str = str(input("Inserisci titolo album ('esc' per uscire): "))
 
     if enter_album=="esc":
         break
 
-    music_list.append(make_album(artist_name=enter_artist, album_title=enter_album))
+    enter_n_songs:str = str(input("Inserire il numero di canzoni (opzionale). ('no' per andare avanti, 'esc' per uscire): "))
+    
+    if enter_n_songs=="esc":
+        break
+    elif enter_n_songs=="no":
+        print(make_album(artist_name=enter_artist, album_title=enter_album))
+    
 
 
-    print(make_album(artist_name=enter_artist, album_title=enter_album))
+   #prova is digit 
+    elif enter_n_songs!=None and type(int(enter_n_songs))==int:
 
-print(music_list)
+        print(make_album(artist_name=enter_artist, album_title=enter_album, n_songs=enter_n_songs))
+    else:
+        print(make_album(artist_name=enter_artist, album_title=enter_album))
+
+
+
 
 
 

@@ -7,7 +7,8 @@ Print the message My favorite pizzas are:, and then use a for loop to print the 
 Print the message My friend’s favorite pizzas are:, and then use a for loop to print the second list.
 Make sure each new pizza is stored in the appropriate list.'''
 
-pizzas:list[str] = ["Margherita", "Diavola", "Noci e gorgonzola"]
+pizzas:list[str] = ["Margherita", "Diavola", 
+                    "Noci e gorgonzola"]
 
 friend_pizzas:list[str] = pizzas.copy() 
 
@@ -20,19 +21,16 @@ if pizzas != friend_pizzas:
 
 
 for word in pizzas:
-
     print(f"My favorite pizzas are: {word}")
 
 
 for word in friend_pizzas:
-
     print(f"My friend's favorite pizzas are: {word}")
 
 
 print(f"My favorite pizzas are: ")
 
 for word in pizzas:
-
     print(word)
 
 
