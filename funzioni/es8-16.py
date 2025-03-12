@@ -7,3 +7,22 @@ import module_name as mn
 from module_name import *
 '''
 
+import separate_file
+
+separate_file.ingredients("Pollo")
+
+from separate_file import ingredients
+
+ingredients("Pollo")
+
+from separate_file import ingredients as fn
+
+fn("Pollo")
+
+import separate_file as mn
+
+mn.ingredients("Pollo")
+
+from separate_file import *
+
+ingredients("Yogurt")
