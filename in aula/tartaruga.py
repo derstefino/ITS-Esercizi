@@ -57,108 +57,106 @@ e determinare l'eventuale fine della gara.
 import random, _random
 import time
 
-percorso:list[str] = [
-            "T H", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-            ]
+percorso:list[str] = ["T H", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                      ]
 
+posizione_Lepre = 0
+posizione_Tartaruga = 0
 
-
-def mossa_Tartaruga() -> None:
-    posizione_Tartaruga = 0
+def mossa_Tartaruga(posizioneT:int) -> None:
+    
 
     mossa_tartaruga = random.randint(1,10)
     if 1 <= mossa_tartaruga <= 5:
         print("\nPasso veloce della tartaruga!\n")
-        posizione_Tartaruga += 3
-        percorso[posizione_Tartaruga] = "T"
-
+        posizioneT += 3
+        percorso.insert(posizioneT, "T")
         
         print(percorso, "\n")
     
-    if 6 <= mossa_tartaruga <= 7 and posizione_Tartaruga >=6:
+    if 6 <= mossa_tartaruga <= 7 and posizioneT >=6:
         print("\nLa tartaruga è scivolata!\n")
-        posizione_Tartaruga -= 6
-        percorso[posizione_Tartaruga] = "T"
-
+        posizioneT -= 6
+        percorso.insert(posizioneT, "T")
        
         print(percorso, "\n")
 
     if 8 <= mossa_tartaruga <= 10:
         print("\nPasso lento della tartaruga!\n")
-        posizione_Tartaruga += 1
-        percorso[posizione_Tartaruga] = "T"
+        posizioneT += 1
+        percorso.insert(posizioneT, "T")
 
         
         print(percorso, "\n")
 
 
-def mossa_Lepre() -> None:
-    posizione_Lepre = 0
+def mossa_Lepre(posizioneH:int) -> None:
+    
 
     mossa_lepre = random.randint(1,10)
     if 1 <= mossa_lepre <= 2:
         print("\nLa lepre sta riposando!\n")
-        posizione_Lepre += 0
-        percorso[posizione_Lepre] = "H"
+        posizioneH += 0
+        percorso.insert(posizioneH, "H")
         
         
         print(percorso, "\n")
 
     if 3 <= mossa_lepre <= 4:
         print("\nGrande balzo della lepre!\n")
-        posizione_Lepre += 9
-        percorso[posizione_Lepre] = "H"
+        posizioneH += 9
+        percorso.insert(posizioneH, "H")
         
 
         print(percorso, "\n")
 
-    if 5 <= mossa_lepre <= 5 and posizione_Lepre >= 12:
+    if 5 <= mossa_lepre <= 5 and posizioneH >= 12:
         print("\nScivolone della lepre!\n")
-        posizione_Lepre -= 12
-        percorso[posizione_Lepre] = "H"
+        posizioneH -= 12
+        percorso.insert(posizioneH, "H")
     
 
         print(percorso, "\n")
 
     if 6 <= mossa_lepre <= 8:
         print("\nPiccolo balzo della lepre\n")
-        posizione_Lepre += 1
-        percorso[posizione_Lepre] = "H"
-
+        posizioneH += 1
+        percorso.insert(posizioneH, "H")
         
 
         print(percorso, "\n")
 
-    if 9 <= mossa_lepre <= 10 and posizione_Lepre >= 1:
+    if 9 <= mossa_lepre <= 10 and posizioneH >= 1:
         print("\nLa lepre inciampa\n")
-        posizione_Lepre -= 1
-        percorso[posizione_Lepre] = "H"
-
+        posizioneH -= 1
+        percorso.insert(posizioneH, "H")
 
         print(percorso, "\n")
 
 
 print("BANG !!!!! AND THEY'RE OFF !!!!!\n")
+
+
 print(percorso)
 
 
 while True:
 
     time.sleep(3)
-    mossa_Tartaruga()
+    mossa_Tartaruga(posizioneT=posizione_Tartaruga)
     
     
     time.sleep(3)
-    mossa_Lepre()
+    mossa_Lepre(posizioneH=posizione_Lepre)
     
     if percorso[-1] != "_":
         print("Finish")
