@@ -54,126 +54,129 @@ Ad ogni tick, calcolare le mosse, mostrare la posizione sulla corsia di gara,
 e determinare l'eventuale fine della gara.
 '''
 
-import random
-import time
+import random, time
 
+percorso:list = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
-percorso:list[str] = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                      ]
+posizione_Tartaruga = 1
 
+posizione_Lepre = 1
+
+def mostra_posizioni() -> None:
+    print(f"\nPosizione tartaruga: quadrato {posizione_Tartaruga}")
+    print(f"Posizione lepre: quadrato {posizione_Lepre}")
+    
+
+def mossa_tartaruga() -> int:
+    passo = random.randint(1,10)
+    if 1 <= passo <= 5:
+        
+        print("\n\nPasso veloce della tartaruga!")
+        return 3
+    elif 6 <= passo <= 7:
+        
+        print("\n\nLa tartaruga scivola!")
+        return -6
+    elif 8 <= passo <= 10:
+        
+        print("\n\nPasso lento della tartaruga...")
+        return 1
+
+def mossa_lepre() -> int:
+    passo = random.randint(1,10)
+    if 1 <= passo <= 2:
+        print("La lepre sta riposando...\n")
+        return 0
+    elif 3 <= passo <= 4:
+        print("Grande balzo della lepre!\n")
+        return 9
+    elif 5<= passo <= 5:
+        print("Scivolone della lepre!\n")
+        return -12
+    elif 6 <= passo <= 8:
+        print("La lepre saltella\n")
+        return 1
+    elif 9 <= passo <= 10:
+        print("La lepre inciampa!\n")
+        return -1
+    
 
 
 timer = 0
-posizione_Tartaruga = 0
-posizione_Lepre = 0
-
-def mossa_Tartaruga() -> None:
-    global posizione_Tartaruga
-
-    mossa_tartaruga = random.randint(1,10)
-    
-    if 1 <= mossa_tartaruga <= 5:
-        print("\nPasso veloce della tartaruga!\n")
-        
-        posizione_Tartaruga += 3
-       
-        
-    
-    elif 6 <= mossa_tartaruga <= 7 and posizione_Tartaruga >=6:
-        print("\nLa tartaruga è scivolata!\n")
-        
-        posizione_Tartaruga -= 6
-       
+print("BANG !!!!! AND THEY'RE OFF !!!!!")
 
 
-    elif 8 <= mossa_tartaruga <= 10:
-        print("\nPasso lento della tartaruga!\n")
-    
-        posizione_Tartaruga += 1
-      
-    print("posizione tartaruga: ", posizione_Tartaruga)
+percorso.insert(0, "T H")
 
-
-
-def mossa_Lepre() -> None:
-    global posizione_Lepre
-
-    mossa_lepre = random.randint(1,10)
-    
-    if 1 <= mossa_lepre <= 2:
-        print("\nLa lepre sta riposando!\n")
-        
-        posizione_Lepre += 0
-       
-        
-
-    elif 3 <= mossa_lepre <= 4:
-        print("\nGrande balzo della lepre!\n")
-        
-        posizione_Lepre += 9
-     
-
-
-    elif 5 <= mossa_lepre <= 5 and posizione_Lepre >= 12:
-        print("\nScivolone della lepre!\n")
-       
-        posizione_Lepre -= 12
-       
-
-
-    elif 6 <= mossa_lepre <= 8:
-        print("\nPiccolo balzo della lepre\n")
-       
-        posizione_Lepre += 1
-      
-        
-
-    elif 9 <= mossa_lepre <= 10 and posizione_Lepre >= 1:
-        print("\nLa lepre inciampa\n")
-       
-        posizione_Lepre -= 1
-        
-    print("posizione lepre: ", posizione_Lepre)
-
-
-
-print("BANG !!!!! AND THEY'RE OFF !!!!!\n")
-
-percorso[0] = "T H"
 print(percorso)
 
-percorso[0] = "_" 
+percorso.remove("T H")
 
-
+time.sleep(3)
 
 while True:
 
-    time.sleep(2.5)
 
-    mossa_Tartaruga()
-    percorso.pop(posizione_Tartaruga)
-    percorso.insert(posizione_Tartaruga, "T")
-    print(percorso)
-    timer +=1
-   
-    time.sleep(2.5)
+    posizione_Tartaruga += mossa_tartaruga()
+    if posizione_Tartaruga < 0:
+        posizione_Tartaruga = 0
+    if posizione_Tartaruga > 70:
+        posizione_Tartaruga = 70
 
-    mossa_Lepre()
-    percorso.pop(posizione_Lepre)
-    percorso.insert(posizione_Lepre, "H")
+    if posizione_Tartaruga == 0:
+        percorso.insert(0, "T")
+    else:
+        percorso.insert(posizione_Tartaruga - 1, "T")
+
+    posizione_Lepre += mossa_lepre()
+    if posizione_Lepre < 0:
+        posizione_Lepre = 0
+    if posizione_Lepre > 70:
+        posizione_Lepre = 70
+
+    if posizione_Lepre == 0:
+        percorso.insert(0, "H")
+    else:
+        percorso.insert(posizione_Lepre - 1, "H")
+
+    if posizione_Tartaruga == posizione_Lepre:
+        if posizione_Tartaruga == 0 and posizione_Lepre == 0:
+            percorso.insert(posizione_Tartaruga, "OUCH!")
+            percorso.remove("T")
+            percorso.remove("H")
+        else:
+            percorso.insert(posizione_Tartaruga - 1, "OUCH!")
+            percorso.remove("T")
+            percorso.remove("H")
+
     print(percorso)
-    timer += 1
     
-    
-    if percorso[-1] != "_":
-        print("Finish")
+    mostra_posizioni()
+
+
+    if posizione_Tartaruga == 70 and posizione_Lepre == 70:
+        print("IT'S A TIE!")
         break
+    elif posizione_Lepre == 70:
+        print("HARE WINS || YUCH!!!")
+        break
+    elif posizione_Tartaruga == 70:
+        print("TORTOISE WINS! || VAY!!!")
+        break
+
+    percorso:list = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
+                 "_", "_", "_", "_", "_", "_", "_", "_"]
+
+    timer+=1
+    time.sleep(3)
