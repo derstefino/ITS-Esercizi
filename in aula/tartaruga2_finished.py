@@ -120,7 +120,7 @@ percorso.remove("T H")
 
 time.sleep(3)
 
-while True:
+while posizione_Tartaruga != 70 and posizione_Lepre != 70:
 
 
     posizione_Tartaruga += mossa_tartaruga()
@@ -160,15 +160,7 @@ while True:
     mostra_posizioni()
 
 
-    if posizione_Tartaruga == 70 and posizione_Lepre == 70:
-        print("IT'S A TIE!")
-        break
-    elif posizione_Lepre == 70:
-        print("HARE WINS || YUCH!!!")
-        break
-    elif posizione_Tartaruga == 70:
-        print("TORTOISE WINS! || VAY!!!")
-        break
+    
 
     percorso:list = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
                  "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
@@ -180,3 +172,13 @@ while True:
 
     timer+=1
     time.sleep(3)
+
+if posizione_Tartaruga == 70 and posizione_Lepre == 70:
+        print("IT'S A TIE!")
+        
+elif posizione_Lepre == 70:
+        print("HARE WINS || YUCH!!!")
+        
+elif posizione_Tartaruga == 70:
+        print("TORTOISE WINS! || VAY!!!")
+        
