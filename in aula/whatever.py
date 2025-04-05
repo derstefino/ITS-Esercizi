@@ -1,7 +1,13 @@
-d = {'e':'4', 'ee':'44'}
+nums=[4,3,2,7,8,2,3,1]
 
-dk = d.keys()
+nums.sort()
 
-print(*dk)
+print(nums)
+n=0
 
-print(*d.items())
+
+
+
+
+       # while contatore_indice minore di len(lista) 
+
