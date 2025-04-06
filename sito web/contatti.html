@@ -1,20 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Un sito Web </title>
+        <title> Contatti </title>
     </head>
-    <body>
-        <a href="welcome.html">Indietro</a>
+    <table border="1" width="100%">
+        <tr>
+            <td><a href="welcome.html">Indietro</a></td>
+            <td><a href="chisiamo.html">    Chi Siamo   </a></td>
+            <td><a href="prodotti.html">    Prodotti    </a></td>
+            <td><a href="servizi.html">     Servizi     </a></td>
+            <td><a href="contatti.html">    Contatti    </a></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <h2>Contattaci</h2>
+
+    <form>
         <table>
-        
-            
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome" required></td>
+            </tr>
+            <tr>
+                <td>Cognome:</td>
+                <td><input type="text" name="cognome" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Messaggio:</td>
+                <td><textarea name="messaggio"></textarea></td>
+            </tr>
+            <tr><td><input type="submit" value="Invia"></td></tr>
         </table>
-
-
-
-
-
-
-
+    </form>
 
     </body>
+</html>
