@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabelle</title>
+  <style>
+    body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin: 0;
+      background-color: #ccffcc;
+    }
+
+    header {
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    header img {
+      width: 100%;
+      max-height: 120px;
+      object-fit: cover;
+    }
+
+    nav {
+      
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    nav span {
+      
+      margin: 0 15px;
+      padding: 5px 10px;
+      border-right: 1px solid #999;
+    }
+
+    nav span:last-child {
+      border-right: none;
+    }
+
+    .container {
+      display: flex;
+      width: 80%;
+      margin: 20px auto;
+      background-color: white;
+      box-shadow: 0 0 60px #aaa;
+    }
+
+    .sidebar {
+      width: 25%;
+      background-color: white;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar img {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      width: 75%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .main-content h3 {
+      color: #333;
+    }
+
+    .main-content p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .product {
+      display: flex;
+      
+      padding: 15px 0;
+    }
+
+    .product img {
+      width: auto;
+      height: auto;
+      margin-right: 20px;
+    }
+
+    .product p {
+      margin: 5px 0;
+    }
+
+    .available {
+      color: green;
+      font-weight: bold;
+      background-color: #eeeeee;
+    }
+
+    .more {
+      text-align: right;
+      font-style: italic;
+      color: #333;
+      background-color: #eeeeee;
+    }
+
+    .highline {
+      background-color: #eeeeee;
+
+    } 
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="materiale/top.jpg" alt="Top banner">
+</header>
+
+<nav>
+  <span>HOME</span>
+  <span>LA NOSTRA AZIENDA</span>
+  <span>I PRODOTTI</span>
+  <span>I SERVIZI</span>
+  <span>CARRELLO</span>
+  <span>CONTATTI</span>
+</nav>
+
+<div class="container">
+  <div class="sidebar">
+    <img src="materiale/registrati-ora.jpg" alt="Registrati ora">
+    <div class="login-box">
+        <img src="materiale/login.jpg">
+      
+    </div>
+
+    <div class="catalogo">
+        <img src="materiale/catalogo.jpg">
+      
+     
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h3>L’attività della Edit Service offre i seguenti servizi :</h3>
+    <p>Visita periodica al vostro studio consegnandovi direttamente in conto visione le ultime novità editoriali senza obbligo di acquisto.
+        La possibilità di richiedere sempre in visione tutti i libri che volete o che troverete elencati nel sito.
+        Ricevere le Banche Dati di vostra utilità in demo.
+        Ricevere periodicamente le news via E-mail e il catalogo di tutte le novità facendone semplicemente richiesta.</p>
+
+    <div class="product">
+      <img src="materiale/libro1.jpg" alt="Libro 1">
+      <div>
+        
+        <p class="highline"><strong>Le frodi carosello</strong></p>
+        <p class="highline">Categoria : Fiscale</p>
+        <p class="highline">Editore : MAGGIOLI</p>
+        <p class="highline">Codice : 9788891619204</p>
+        <p class="highline">Prezzo : 22,00</p>
+        <p class="available">*** Articolo Disponibile ***</p>
+        <p class="more">..... maggiori informazioni</p>
+        
+          
+      </div>
+    </div>
+
+    <img src="materiale/divisore.jpg">
+
+    <div class="product">
+      <img src="materiale/libro2.jpg" alt="Libro 2">
+      <div>
+        <p class="highline"><strong>La cartella di pagamento</strong></p>
+        <p class="highline">Categoria : Fiscale</p>
+        <p class="highline">Editore : MAGGIOLI</p>
+        <p class="highline">Codice : 9788891621115</p>
+        <p class="highline">Prezzo : 54,00</p>
+        <p class="available">*** Articolo Disponibile ***</p>
+        <p class="more">..... maggiori informazioni</p>
+      </div>
+    </div>
+
+    <img src="materiale/divisore.jpg">
+
+    <div class="product">
+      <img src="materiale/libro3.jpg" alt="Libro 3">
+      <div>
+        <p class="highline"><strong>Azienda agricola e fisco</strong></p>
+        <p class="highline">Categoria : Fiscale</p>
+        <p class="highline">Editore : MAGGIOLI</p>
+        <p class="highline">Codice : 9788891619815</p>
+        <p class="highline">Prezzo : 42,00</p>
+        <p class="available">*** Articolo Disponibile ***</p>
+        <p class="more">..... maggiori informazioni</p>
+      </div>
+    </div>
+
+    <img src="materiale/divisore.jpg">
+
+  </div>
+</div>
+
+</body>
+</html>

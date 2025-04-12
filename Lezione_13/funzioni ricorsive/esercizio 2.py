@@ -15,6 +15,5 @@ def compoundInterest(m:float, mesi:int):
         m += 1.005*compoundInterest(m, mesi -1) 
         return m
 
-print(compoundInterest(10000, 12))
+print(compoundInterest(1000, 12))
 
-print(10000*1.005*12)

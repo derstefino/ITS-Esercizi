@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Lista della Spesa</title>
+  <script>
+    function aggiungiProdotto() {
+      var input = document.getElementById("prodotto");
+      var nomeProdotto = input.value.trim();
+
+      if (nomeProdotto !== "") {
+        var lista = document.getElementById("listaSpesa");
+        var nuovoElemento = document.createElement("li");
+        nuovoElemento.textContent = nomeProdotto;
+        lista.appendChild(nuovoElemento);
+        input.value = "";
+      } else {
+        alert("Inserisci un nome valido per il prodotto.");
+      }
+    }
+
+    function svuotaLista() {
+      var lista = document.getElementById("listaSpesa");
+      lista.innerHTML = "";
+    }
+  </script>
+</head>
+<body>
+  <h1>Lista della Spesa</h1>
+
+  <label for="prodotto">Inserisci un prodotto:</label><br>
+  <input type="text" id="prodotto">
+  <button onclick="aggiungiProdotto()">Aggiungi</button>
+  <button onclick="svuotaLista()">Svuota lista</button>
+
+  <h2>Prodotti:</h2>
+  <ul id="listaSpesa"></ul>
+</body>
+</html>

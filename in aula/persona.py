@@ -10,3 +10,5 @@ class Persona:
 
     def displayData(self) -> None:
         print(f"Nome: {self.name}\nCognome: {self.lastname}\nEtà: {self.age}")
+
+    

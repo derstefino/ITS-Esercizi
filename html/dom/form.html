@@ -1,0 +1,95 @@
+<!DOCTYPE >
+<html>
+<head>
+  
+  <title>Registrazione</title>
+  <script>
+    function validaForm() {
+      var cognome = document.getElementById("cognome").value.trim();
+      var nome = document.getElementById("nome").value.trim();
+      var matricola = document.getElementById("matricola").value.trim();
+      var regione = document.getElementById("regione").value;
+      var email = document.getElementById("email").value.trim();
+      var telefono = document.getElementById("telefono").value.trim();
+
+      if (cognome === "") {
+        alert("Il campo Cognome è obbligatorio.");
+        return false;
+      }
+
+      if (nome === "") {
+        alert("Il campo Nome è obbligatorio.");
+        return false;
+      }
+
+      if (matricola === "" || isNaN(matricola)) {
+        alert("La Matricola deve essere un numero.");
+        return false;
+      }
+
+      if (regione === "") {
+        alert("Seleziona una Regione.");
+        return false;
+      }
+
+      if (email === "" && telefono === "") {
+        alert("Inserisci almeno Email o Telefono.");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h1>Modulo di Registrazione</h1>
+
+  <form onsubmit="return validaForm();">
+    <label for="cognome">Cognome:</label><br>
+    <input type="text" id="cognome" size="40"><br><br>
+
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" size="30"><br><br>
+
+    <label for="matricola">Matricola:</label><br>
+    <input type="text" id="matricola" size="12"><br><br>
+
+    <label for="regione">Regione di Residenza:</label><br>
+    <select id="regione">
+      <option value="">--Seleziona una regione--</option>
+      <option>Abruzzo</option>
+      <option>Basilicata</option>
+      <option>Calabria</option>
+      <option>Campania</option>
+      <option>Emilia-Romagna</option>
+      <option>Friuli-Venezia Giulia</option>
+      <option>Lazio</option>
+      <option>Liguria</option>
+      <option>Lombardia</option>
+      <option>Marche</option>
+      <option>Molise</option>
+      <option>Piemonte</option>
+      <option>Puglia</option>
+      <option>Sardegna</option>
+      <option>Sicilia</option>
+      <option>Toscana</option>
+      <option>Trentino-Alto Adige</option>
+      <option>Umbria</option>
+      <option>Valle d'Aosta</option>
+      <option>Veneto</option>
+    </select><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" size="30"><br><br>
+
+    <label for="telefono">Telefono:</label><br>
+    <input type="text" id="telefono" size="15"><br><br>
+
+    <label for="richieste">Richieste particolari:</label><br>
+    <textarea id="richieste" rows="12" cols="60"></textarea><br><br>
+
+    <input type="submit" value="Invia">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+</html>
