@@ -1,4 +1,4 @@
-from persona1 import Persona
+from persona import Persona
 from studente import Studente
 #
 
