@@ -1,5 +1,6 @@
 '''An interactive calculator:
-It is required to develop an interactive calculator with at least 10 test cases using UnitTest trying to (possibly)
+It is required to develop an interactive calculator with at least 10 test cases
+using UnitTest trying to (possibly)
 cover all execution paths! User input is assumed to be a formula that consists of a number,
 an operator (at least + and -), and another number, separated by white space (e.g. 1 + 1).
 Split user input using str.split(), and check whether the resulting list is valid:
