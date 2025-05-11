@@ -6,28 +6,24 @@
     Create a for loop to iterate over a list of students and scores, calling the function for each student.
 '''
 
-def average_score(students_name:str, *args:list[int]) -> int:
+def average_score(student_name:str, scores:list[int]) -> None:
 
-    print(students_name)
-    
-    average = 0
+    print(student_name)
 
-    for n in args:
-        average += n
-    
-    print(average/len(args))
+    average = sum(scores)/len(scores)
 
     if average >= 60:
-        print(f"{students_name} passed")
+        print(f"average: {average}")
+        print("passed\n")
     else:
-        print(f"{students_name} failed")
+        print(f"average: {average}")
+        print("failed\n")
 
 
 
-list_students = ["Didi", "Nello"] 
 
-scores = [1,2,3,4]
+students_list:list = [("stefano",[60, 70, 80]),("goku",[40,60,100]),("ash",[30,20,90])]
 
-for s in list_students:
-    average_score(s)
-    for s in scores
+for student in students_list:
+    average_score(student[0], student[1])
+
