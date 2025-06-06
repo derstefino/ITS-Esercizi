@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+ 
+    <style>
+        body {
+            text-align: center;
+            margin-top: 40px;
+        }
+        hr {
+            border: none;
+            height: 4px;
+            background-color: steelblue;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div id="contenitore"></div>
+
+    <script>
+        function creaLinee() {
+            let contenitore = document.getElementById("contenitore");
+
+            for (let i = 0.3; i <= 100; i += 5) {
+                let linea = document.createElement("hr");
+                linea.style.width = i + "%";
+                contenitore.appendChild(linea);
+            }
+        }
+
+       
+        creaLinee();
+    </script>
+
+</body>
+</html>
+   

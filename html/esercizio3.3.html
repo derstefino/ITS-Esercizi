@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    
+</head>
+<body>
+
+<h2>esercizio 3.3</h2>
+<div id="output"></div>
+
+<script>
+    
+     
+     let secondiTotali = 12560;
+
+
+let ore = Math.floor(secondiTotali / 3600);
+let minuti = Math.floor((secondiTotali % 3600) / 60); //quelle che non sono ore sono minuti 
+let secondi = secondiTotali % 60; // quelle che non sono né ore né minuti sono secondi
+
+
+document.getElementById("output").innerHTML = 
+    "Input: " + secondiTotali + " secondi<br>" +
+    "Output: " + ore + " ore, " + minuti + " minuti e " + secondi + " secondi";
+</script>
+
+</body>
+</html>

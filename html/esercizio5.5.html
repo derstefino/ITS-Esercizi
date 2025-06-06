@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+   
+ 
+    <style>
+        body {
+            font-family: monospace;
+            white-space: pre;
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        function stampaAsterischi() {
+            let contenitore = document.getElementById("output");
+
+            for (let i = 10; i <= 30; i++) {
+        
+                let riga = "*".repeat(i);
+           
+                let linea = document.createElement("div");
+                linea.textContent = riga;
+                contenitore.appendChild(linea);
+            }
+        }
+
+    
+        stampaAsterischi();
+    </script>
+
+</body>
+</html>

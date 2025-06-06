@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+<body>
+    <h2>Somma e media di un array di 5 numeri</h2>
+    <button onclick="calcolaSommaMedia()">Calcola somma e media</button>
+  
+    <p id="risultato"></p>
+  
+    <script>
+      function calcolaSommaMedia() {
+      
+        let numeri = [10, 20, 30, 47, 50];
+  
+        let somma = 0;
+      
+        for (let i = 0; i < numeri.length; i++) {
+          somma += numeri[i];
+        }
+  
+       
+        let media = somma / numeri.length;
+  
+     
+        document.getElementById('risultato').textContent =
+          `Array: [${numeri.join(', ')}]\nSomma: ${somma}\nMedia: ${media}`;
+      }
+    </script>
+  </body>
+  </html>

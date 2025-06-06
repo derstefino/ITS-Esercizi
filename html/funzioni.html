@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+    <body>
+       
+<div id="risultato"></div>
+<div id="saluto"></div>
+
+<script>
+
+function somma(num1, num2){
+document.getElementById("risultato").innerHTML = "la somma è evidentemente " + (num1 + num2);
+
+
+} 
+somma(2,8);
+
+function benvenuto(nome = "guest") {
+
+    return "welcome " + nome;
+
+} 
+
+let msg = benvenuto();
+document.getElementById("saluto").innerHTML = msg;
+
+</script>
+
+    </body>
+    </html>
+   

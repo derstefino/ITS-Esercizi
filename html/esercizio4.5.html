@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+<body>
+    <h2>Doppio dei numeri da 0 a 20 con passo 2</h2>
+    <button onclick="stampaDoppi()">Stampa doppi</button>
+  
+    <h3>Doppio con ciclo FOR:</h3>
+    <pre id="doppiFor"></pre>
+  
+    <h3>Doppio con ciclo WHILE:</h3>
+    <pre id="doppiWhile"></pre>
+  
+    <script>
+      function stampaDoppi() {
+   
+        let risultatoFor = '';
+        for (let i = 0; i <= 20; i += 2) {
+          risultatoFor += (i * 2) + '\n';  
+        }
+        document.getElementById('doppiFor').textContent = risultatoFor;
+  
+        let risultatoWhile = '';
+        let i = 0;
+        while (i <= 20) {
+          risultatoWhile += (i * 2) + '\n';  
+          i += 2;
+        }
+        document.getElementById('doppiWhile').textContent = risultatoWhile;
+      }
+    </script>
+  </body>
+  </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+    <body>
+    
+<script>
+
+function intRange(num){
+if (1<=num && num<=7){
+    return true;
+} else {
+   return false;
+
+} }
+
+function giornoSettimana(num) {
+if (intRange(num)===true) {
+
+    if (num==1){ return "lunedi";} 
+    if (num==2) {return "martedi";} 
+    if (num==3){return "mercoledi";} 
+    if (num==4) {return "giovedi";} 
+    if (num==5)  {return "venerdi";} 
+    if (num==6)  {return "sabato";} 
+    if (num==7)  {return "domenica";} 
+
+} else {return "mi dispiace, non so indovinare il giorno";
+
+}}
+
+document.write(giornoSettimana(13))
+
+
+</script>
+
+    </body>
+    </html>
+   

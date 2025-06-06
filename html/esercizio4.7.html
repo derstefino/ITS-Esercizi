@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+<body>
+    <h2>Trova il numero più grande in un array di 7 numeri</h2>
+    <button onclick="trovaMassimo()">Trova massimo</button>
+  
+    <p id="risultato"></p>
+  
+    <script>
+      function trovaMassimo() {
+      
+        let numeri = [15, 42, 7, 23, 89, 54, 31];
+  
+       
+        let massimo = numeri[0];
+  
+        
+        for (let i = 1; i < numeri.length; i++) {
+          if (numeri[i] > massimo) {
+            massimo = numeri[i];
+          }
+        }
+  
+      
+        document.getElementById('risultato').textContent =
+          `Array: [${numeri.join(', ')}]\nNumero più grande: ${massimo}`;
+      }
+    </script>
+  </body>
+  </html>

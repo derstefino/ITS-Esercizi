@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+    
+<body>
+    <h2>Conta numeri pari e dispari in un array di 10 numeri</h2>
+    <button onclick="contaPariDispari()">Conta pari e dispari</button>
+  
+    <p id="risultato"></p>
+  
+    <script>
+      function contaPariDispari() {
+        
+        let numeri = [3, 8, 15, 22, 7, 10, 11, 4, 9, 6];
+  
+        let countPari = 0;
+        let countDispari = 0;
+  
+       
+        for (let i = 0; i < numeri.length; i++) {
+          if (numeri[i] % 2 === 0) {
+            countPari++;
+          } else {
+            countDispari++;
+          }
+        }
+  
+     
+        document.getElementById('risultato').textContent =
+          `Nell’array [${numeri.join(', ')}] ci sono ${countPari} numeri pari e ${countDispari} numeri dispari.`;
+      }
+    </script>
+  </body>
+  </html>

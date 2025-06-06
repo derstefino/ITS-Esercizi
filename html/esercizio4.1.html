@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+</head>
+
+<body>
+    <h2>Inserisci un numero da 1 a 10</h2>
+    <input type="number" id="numero" min="1" max="10" value="5" />
+    <button onclick="mostraTabelline()">fai la tabellina</button>
+  
+    <h3>Tabellina con ciclo FOR:</h3>
+    <pre id="tabellinaFor"></pre>
+  
+    <h3>Tabellina con ciclo WHILE:</h3>
+    <pre id="tabellinaWhile"></pre>
+  
+    <script>
+      function mostraTabelline() {
+        let numero = parseInt(document.getElementById('numero').value);
+        if (isNaN(numero) || numero < 1 || numero > 10) {
+          alert('Inserisci un numero valido tra 1 e 10');
+          return;
+        }
+  
+       
+        let risultatoFor = '';
+        for (let i = 1; i <= 10; i++) {
+          risultatoFor += `${numero} x ${i} = ${numero * i}\n`;
+        }
+        document.getElementById('tabellinaFor').textContent = risultatoFor;
+  
+       
+        let risultatoWhile = '';
+        let i = 1;
+        while (i <= 10) {
+          risultatoWhile += `${numero} x ${i} = ${numero * i}\n`;
+          i++;
+        }
+        document.getElementById('tabellinaWhile').textContent = risultatoWhile;
+      }
+    </script>
+  </body>
+  </html>
