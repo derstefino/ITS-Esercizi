@@ -22,4 +22,6 @@ def merge_interval(intervals:list[list[int]]) -> list:
 
 
 
-print(merge_interval([[1, 4], [4, 5]]))
+print(merge_interval([[1, 4], [4, 5],[7,99],[8,200]   ]))
+
+
