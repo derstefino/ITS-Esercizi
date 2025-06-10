@@ -4,16 +4,12 @@ def sum_primary_diagonal(matrix:list[list]) -> int:
 
     for row in matrix:
         
-        sum += row[matrix.index[row]]
+        sum += row[matrix.index(row)]
 
     return sum
 
 
-
-
-
-
-def sum_secondary_diagonal(matrix:list[list]) -> int:
+def sum_secondary_diagonal(matrix:list[list[int]]) -> int:
 
     sum=0
     index = -1
@@ -25,4 +21,8 @@ def sum_secondary_diagonal(matrix:list[list]) -> int:
     
     return sum
 
-
+print(sum_secondary_diagonal([
+[1, 2, 3],
+[4, 5, 6],
+[7, 8, 9]
+]))

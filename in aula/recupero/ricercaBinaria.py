@@ -15,32 +15,11 @@ def binary_search(n:int, num_list:list[int]) -> bool:
         elif n < valore:
             fine = incontro -1
         elif n > valore:
-            fine = incontro + 1
+            inizio = incontro + 1
     
 
     return False
-        
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    return True
 
-    
-    
-    
-    
-    
-    
-    return False
+
+print(binary_search(1,[0,1,4,25,45]))

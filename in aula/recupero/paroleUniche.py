@@ -16,3 +16,6 @@ def f(testo:str) -> dict:
             conteggio[parola_minusc] = 1
 
     return conteggio
+
+
+print(f("Hello, world! Hello... PYTHON? world."))
