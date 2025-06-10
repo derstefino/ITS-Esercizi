@@ -7,14 +7,14 @@ class Movie:
         self.director = director
         self.is_rented = is_rented
 
-    def rent(self):
+    def rent(self) -> None:
         
         if self.is_rented:
             print(f"Il film {self.title} è già noleggiato")
         else:
             self.is_rented = True
 
-    def return_movie(self):
+    def return_movie(self) -> None:
 
         if self.is_rented:
             self.is_rented = False
@@ -36,6 +36,7 @@ class Customer:
             print(f"Il film {movie.title} è già noleggiato")
         else:
             self.rented_movies.append(movie)
+            movie.is_rented = True
 
     def return_movie(self, movie:Movie):
          
@@ -69,13 +70,14 @@ class VideoRentalStore:
     def rent_movie(self, customer_id:str, movie_id:str):
 
         if customer_id in self.customers and movie_id in self.movies:
+            self.customers[customer_id].rent_movie(self.movies[movie_id])
             self.movies[movie_id].is_rented = True
         else:
             print(f"Cliente o film non trovato")
 
     def return_movie(self, customer_id:str, movie_id:str):
 
-        if customer_id in self.customers and movie_id in self.movies:
+        if customer_id in self.customers and movie_id in self.movies:  
             self.movies[movie_id].is_rented = False
         else:
             print(f"Cliente o film non trovato")
@@ -87,3 +89,11 @@ class VideoRentalStore:
         else:
             print("Cliente non trovato")
             return []
+        
+    
+    def list_rented_movies(self) -> list[Movie]:
+        list_rented:list = [] 
+        for movie in self.movies.values():
+            if movie.is_rented:
+                list_rented.append(movie)
+        return list_rented
